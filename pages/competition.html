@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Competition</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/index.css">
+	<link rel="stylesheet" href="../assets/css/form.css">
+	<style>
+		/* menampilkan pattern background di sisi kanan dan kiri content */
+		body {
+			background: url("../assets/img/bg.png") repeat scroll 0px 0px;
+		}
+
+		/* background parallax */
+		.parallax {
+			background-image: url("../assets/img/competition.jpg");
+		}
+	</style>
+	<script>
+		function cekForm(){
+			if (document.fValidate.phone.value != ""){
+				var x = (document.fValidate.phone.value);
+				var status = true;
+				var list = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+				for (i=0; i<=x.length-1; i++){
+					if (x[i] in list) cek = true;
+					else cek = false;
+					status = status & cek;
+				}
+				if (status == false){
+					alert("Phone Number harus angka!");
+					document.form['fValidate'].phone.focus();
+					return false;
+				}
+			}
+			if (document.fValidate.name.value == ""){
+				alert("Nama tidak boleh kosong");
+				document.form['fValidate'].name.focus();
+				return false;
+			} else if (document.fValidate.address.value == ""){
+				alert("Alamat tidak boleh kosong");
+				document.form['fValidate'].address.focus();
+				return false;
+			} else if (document.fValidate.email.value == ""){
+				alert("Email Address tidak boleh kosong");
+				document.form['fValidate'].email.focus();
+				return false;
+			} else if (document.fValidate.phone.value == ""){
+				alert("Phone Number tidak boleh kosong");
+				document.form['fValidate'].phone.focus();
+				return false;
+			} else if (document.fValidate.competition.value == ""){
+				alert("Nama Perlombaan tidak boleh kosong");
+				document.form['fValidate'].competition.focus();
+				return false;
+			} else if (document.fValidate.place.value == ""){
+				alert("Tempat Perlombaan tidak boleh kosong");
+				document.form['fValidate'].place.focus();
+				return false;
+			} else{
+				alert("Selamat, Anda sudah terdaftar pada perlombaan");
+				document.fValidate.submit();		
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<!-- HEADER -->
+	<section class="parallax">
+		<div class="container">
+			<h2>Competition</h2>
+		</div>
+		<fieldset class="shadow"></fieldset>
+	</section>
+
+	<!-- BODY -->
+	<section>
+		<!-- NAVIGATION -->	
+		<div class="nav">
+			<div class="container">
+				<ul>
+					<li><a href="news.html"><i class="glyphicon glyphicon-globe"></i>&nbsp;News</a></li>
+					<li><a href="shop.html"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Shop</a></li>
+					<li><a href="gallery.html"><i class="glyphicon glyphicon-picture"></i>&nbsp;Gallery</a></li>
+					<li><a href="story.html"><i class="glyphicon glyphicon-bookmark"></i>&nbsp;Story</a></li>
+					<li><a href="hotspot.html"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;Hot Spot</a></li>
+					<li><a href="competition.html"><i class="glyphicon glyphicon-fire"></i>&nbsp;Competition</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container">
+				<h1>Competition</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<h2>U.I.A.A Ice Climbing World Championship</h2>
+						<article align="justify">
+							Perlombaan memanjat es tahun ini terdapat pada U.I.A.A Ice Climbing World Championship yang berlangsung di 2 kota. Kota pertama adalah di Rebenstein, Italia pada 30 Januari hingga 1 Februari dan kota kedua adalah Kirov, Rusia pada tanggal 6 hingga 8 Maret.
+						</article></br>
+						<img class="thumb-2" src="../assets/img/uiaa.jpg">
+					</div>
+					<div class="col-md-6">
+						<h2>World Stand Up Paddle and Paddleboard Championship</h2>
+						<article align="justify">
+							Perlombaan yang bernama World Stand Up Paddle and Paddleboard Championship yang akan digelar untuk tahun ke-4 pada 10-17 Mei yang pindah dari daerah Nicaragua menuju kota Sayulita di Meksiko, sebuah tempat tujuan yang mudah dijangkau oleh asosiasi selancar internasional.
+						</article>
+						<img class="thumb-2" src="../assets/img/ISA.jpg">
+					</div>
+					<div class="col-md-6">
+						<h2>All Nations Indian Relay Championship</h2>
+						<article align="justify">
+							Balap kuda estafet merupakan olahraga extreme dunia yang tertanam dalam suku budaya, olahraga ini juga termasuk salah satu yang tertua di Amerika Utara. Perlombaan resmi pertama di tahun 2013 dengan nama All Nations Indian Relay Championship. Di tahun 2015, perlombaan ini akan dilakukan di Sheridan, Wyoming pada 11-13 September.
+						</article>
+						<img class="thumb-2" src="../assets/img/indian.png">
+					</div>
+					<div class="col-md-6">
+						<h2>World Parachuting Championship</h2></br>
+						<article align="justify">
+							Lomba terjun bebas diadakan di kota Bilbao, Spanyol. Perlombaan yang disponsori oleh perusahaan minuman energi ini akan meminta para penerjun untuk memperagakan gaya-gaya indah dan menarik dari jembatan La Salve yang memiliki ketinggian 24 meter menuju Sungai Nervion. Perlombaan ini dijadwalkan akan dilaksanakan pada tanggal 26 September 2015.
+						</article>
+						<img class="thumb-2" src="../assets/img/sky.jpg">
+					</div>
+				</div>
+				
+				<h1>Form Pendaftaran</h1>
+				<div class="form-style-10">
+				<h1>Daftar Sekarang!</h1>
+					<form name="fValidate">
+						<div class="section"><span>1</span>First Name &amp; Address</div>
+						<div class="inner-wrap">
+							<label>Your Full Name <input type="text" name="name" /></label>
+							<label>Address <textarea name="address"></textarea></label>
+						</div>
+
+						<div class="section"><span>2</span>Email &amp; Phone</div>
+						<div class="inner-wrap">
+							<label>Email Address <input type="email" name="email" /></label>
+							<label>Phone Number <input type="text" name="phone" /></label>
+						</div>
+
+						<div class="section"><span>3</span>Competition</div>
+							<div class="inner-wrap">
+							<label>Name <input type="text" name="competition" /></label>
+							<label>Place <input type="text" name="place" /></label>
+						</div>
+						<div class="button-section">
+						 <input type="submit" name="Daftar" onclick="cekForm()"/>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="footer">
+				<p>Safira - Meri - Andre - Eka - Adi Bhaskara - Aris </p>
+				<strong><p>Pemrograman Berbasis Web</p></strong>
+				<p>&copy; 2015</p>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

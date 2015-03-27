@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Outdoor Sports</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/shop.css">
+	<style>
+		.header {
+		  	width: 100%;
+		  	min-height: 300px;
+			background: url("../assets/img/Teal2.jpg");
+			display: block;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			position: relative;
+			background-size: cover;
+		}
+	</style>
+
+	<script language="javascript">
+		var totalBelanja = 0;
+		var count = 0;
+
+		function insertItem(myid, position, newListItem, price) {
+		    var ul = document.getElementById(myid);
+		    var li = document.createElement("li");
+		    li.innerHTML = newListItem;
+		    ul.insertBefore(li, ul.getElementsByTagName("li")[position]);
+
+		    count++;
+		    totalBelanja = totalBelanja + price;
+
+		    document.getElementById("total").innerHTML = count+" Stuffs, Total = $"+ totalBelanja;
+		}
+
+		function bayar() {
+			var info = alert("Total Belanja : "+ totalBelanja);
+			var retVal = prompt("Bayar : ", "0");
+
+			if (retVal > totalBelanja)
+				alert("Terimakasih");
+			else
+				alert("Uang Anda kurang");
+			
+		}
+	</script>
+</head>
+
+
+<body>
+	<div class="atas">
+		<div class="kop"><h1>Selamat datang di Outdoor Sport Shop!</h1>
+			<h3>Dapatkan perlengkapan-perlengkapan outdoor sport terbaik, terlengkap, dan termurah di sini.</h3>
+		
+			<button class="buttons btn-atas" onClick="bayar()"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Buy</button>
+
+			<button class="buttons btn-atas"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;Take a look</button>
+		</div>
+	</div>
+
+	<fieldset class="shading"></fieldset>
+
+	<div class="header"></div>
+	
+	<div class="welcome">
+		<header>Shop</header>
+	</div>
+
+	<fieldset class="shading" style="margin-top:-15px;"></fieldset>
+
+	<section class="cart-container">
+		<div class="cart">
+			<div class="container">
+				<header><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Shopping Cart</header>
+
+				<p id="total">0 Stuffs, Total = $0</p>
+
+				<ul id="thumbs">
+					
+				</ul>
+				
+			</div>
+		</div>
+	</section>
+
+	<div class="etalase">
+		<div class="etalase-container">
+			<div class="barang">
+				<img class="img-brg" src="../assets/img/sepeda.png">
+				<p>Men's Mountain Bike - $127.56</p>
+				<input class="beli" type='button' value='Tambah' onClick="insertItem('thumbs',0,'<li>MMB - 127.56</li>',127.56)">
+			</div>
+			<div class="barang">
+				<img class="img-brg" src="../assets/img/tas.png">
+				<p>Mountain Sleeping Bag - $59.00</p>
+				<input class="beli" type='button' value='Tambah' onClick="insertItem('thumbs',0,'<li>MSB - 59.00</li>',59.00)">
+			</div>
+			<div class="barang">
+				<img class="img-brg" src="../assets/img/surf.png">
+				<p>Surf Board - $720.00</p>
+				<input class="beli" type='button' value='Tambah' onClick="insertItem('thumbs',0,'<li>SB - 720.00</li>',720.00)">
+			</div>
+			<div class="barang">
+				<img class="img-brg" src="../assets/img/shoe.png">
+				<p>Athlete Shoe - $80.00</p>
+				<input class="beli" type='button' value='Tambah' onClick="insertItem('thumbs',0,'<li>SB - 720.00</li>',720.00)">
+			</div>
+			<div class="barang">
+				<img class="img-brg" src="../assets/img/snb.png">
+				<p>Snowboard Aviator - $449.65</p>
+				<input class="beli" type='button' value='Tambah' onClick="insertItem('thumbs',0,'<li>SB - 720.00</li>',720.00)">
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>Safira - Meri - Andre - Eka - Adi Bhaskara - Aris </p>
+		<strong><p>Pemrograman Berbasis Web</p></strong>
+		<p>&copy; 2015</p>
+	</div>
+</body>
+
+</html>

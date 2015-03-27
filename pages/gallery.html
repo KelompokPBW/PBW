@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Gallery</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../assets/css/gallery.css">
+		<link href="../assets/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+		<style>
+			/* menampilkan pattern background di sisi kanan dan kiri content */
+			body {
+			background: url("../assets/img/bg.png") repeat scroll 0px 0px;
+			}
+
+			/* background parallax */
+			.parallax {
+				background-image: url("../assets/img/opening.jpg");
+			}
+		</style>
+
+		<!-- JAVASCRIPT -->
+		<script src="../assets/js/jquery-1.10.2.min.js"></script>
+		<script src="../assets/jquery-ui/jquery-ui.min.js"></script>
+		<script>
+	    	//accordion theme:
+	    	$(function() {
+	    		$( "#accordion").accordion({
+	    			collapsible: true
+	    		});
+	    	});
+
+	    	var isUpload = false;
+
+	    	function previewFile(){
+		       var preview = document.querySelector('img'); //selects the query named img
+		       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+		       var reader  = new FileReader();
+
+		       reader.onloadend = function () {
+		           preview.src = reader.result;
+		       }
+
+		       if (file) {
+		           reader.readAsDataURL(file); //reads the data as a URL
+		       } else {
+		           preview.src = "";
+		       }
+
+		       isUpload = true;
+		  	}
+
+		  	function doUpload() {
+		  		if (isUpload)
+		  			alert("Terimakasih sudah mengupload");
+		  		else {
+		  			alert("Gambar belum dipilih");
+		  		}
+		  	}
+		</script>
+	</head>
+
+	<body>
+
+		<!-- HEADER -->
+		<section class="parallax">
+			<div class="container">
+				<h2>Welcome to</h2>
+				<h1>Gallery</h1>
+			</div>
+			<fieldset class="shadow"></fieldset>
+		</section>
+
+		<!-- BODY -->
+		<div class="nav">
+			<div class="container">
+				<ul>
+					<li><a href="news.html"><i class="glyphicon glyphicon-globe"></i>&nbsp;News</a></li>
+					<li><a href="shop.html"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Shop</a></li>
+					<li><a href="gallery.html"><i class="glyphicon glyphicon-picture"></i>&nbsp;Gallery</a></li>
+					<li><a href="story.html"><i class="glyphicon glyphicon-bookmark"></i>&nbsp;Story</a></li>
+					<li><a href="hotspot.html"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;Hot Spot</a></li>
+					<li><a href="competition.html"><i class="glyphicon glyphicon-fire"></i>&nbsp;Competition</a></li>
+				</ul>
+
+				<div class="search">
+					<input type="text" placeholder="Search...">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- NAVIGATION -->
+			<div id="accordion">
+
+				<h2>Hiking</h2>
+				<div>
+					<center>
+					<h4><strong>Mendaki Gunung Batur</strong></h4>
+						<img class="section1" src="../assets/img/batur.jpg">
+						<p>
+							Gunung Batur, gunung tertinggi kedua di pulau seribu pura ini memiliki ketinggian 1.717m.  Gunung ini letaknya di kecamatan Kintamani,  merupakan gunung nomor dua di bali, setelah Gunung Agung (3.142m). Sudah cerita lama gunung aktif satu ini meletus berkali-kali, hasil dari karya letusannya bisa kita lihat sekarang ini berupa kaldera. Kaldera yang dihasilkan letusannya merupakan salah satu kaldera terbesar dan terindah di dunia (menurut Prof Dr Reinout Willem van Bemmelen 1904-1983). Tepat di kaki gunung ini terhampar Danau Batur, yang kalau di lihat dari atas mirip bulan sabit. Kalau mau dilihat lebih jauh lagi dari atas Gunung Batur selain Danau batur, juga masih ada Gunung Abang yang tepat di belakangnya ada Gunung Agung.
+						</p>
+					</center>
+				</div>
+
+				<h2>Skydiving</h2>
+				<div>
+					<center>
+					<h4><strong>Kejuaraan Dunia Terjun Payung Militer</strong></h4>
+						<img class="section2" src="../assets/img/terjun payung.jpg">
+						<p>
+							Dokumentasi peserta World Military Parachuting Championship 2014 kategori ketepatan mendarat (accuracy) bertanding pada hari ketujuh di komplek landasan Bandara Adi Soemarmo, Boyolali, Jawa Tengah. Kejuaraan terjun payung militer dunia ke-38 yang diikuti 406 penerjun payung militer dari 42 negara ini tinggal menyisakan pertandingan untuk kategori accuracy. 
+						</p>
+					</center>
+				</div>
+
+				<h2>Watersports</h2>
+				<div>
+					<center>
+					<h4><strong>Watersport Tanjung Benoa</strong></h4>
+						<img class="section3" src="../assets/img/water sport.jpg">
+						<p>
+							Banyak orang tahu, tempat wisata Bali yang paling sering digunakan untuk aktivitas Bali water sport adalah pantai Tanjung Benoa. Hal yang membuat pantai Tanjung Benoa menjadi pilihan untuk melakukan aktivitas water sport di Bali, karena pantai Tanjung Benoa memiliki gelombang air laut yang tenang dan sangat aman untuk aktivitas water sport di Bali.
+						</p>
+					</center>
+				</div>
+
+				<h2>New</h2>
+				<div>
+					<h4><strong>Upload Kegiatanmu disini !</strong></h4>
+					<br>
+					<form>
+				 	<div class="form-group">
+					    <label>Nama Kegiatan</label>
+					    <input class="form-control" placeholder="Enter Nama Kegiatan">
+				 	 </div>
+				 	<div class="form-group">
+				    	<label>Deskripsi</label>
+				    	<textarea  class="form-control" placeholder="Ketik Deskripsi"></textarea>
+				 	</div>
+				 	<div class="form-group">
+				    	<label>Image input</label>
+				    	<input type="file" onchange="previewFile()">
+						<img src="" height="200" alt="Image preview...">
+				  	</div>
+				  	<button type="button" onClick="doUpload()" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+
+			</div> <!-- accordion -->
+
+			
+			<div class="footer">
+				<p>Safira - Meri - Andre - Eka - Adi Bhaskara - Aris </p>
+				<strong><p>Pemrograman Berbasis Web</p></strong>
+				<p>&copy; 2015</p>
+			</div>
+
+		</div> <!--container -->
+
+	</body>
+</html>
